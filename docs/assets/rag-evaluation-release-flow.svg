@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="940" viewBox="0 0 1100 940" role="img" aria-labelledby="title desc">
+  <title id="title">Reproducible Evaluation and Release Flow</title>
+  <desc id="desc">The original ragbench-v1 benchmark passes through the experiment runner into retrieval and generation artifacts, versioned JSON and JSONL, the Hugging Face Dataset and static Space, and the GitHub README.</desc>
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#475569"/></marker>
+    <style>
+      .t{font-family:Arial,Helvetica,sans-serif;fill:#172033}.h{font-size:27px;font-weight:700;letter-spacing:.8px}.box{fill:#fff;stroke:#475569;stroke-width:2;rx:12}.blue{fill:#edf6ff;stroke:#3779b8}.amber{fill:#fff8e7;stroke:#b7791f}.green{fill:#eef9f1;stroke:#438a5e}.label{font-size:18px;font-weight:700}.small{font-size:14px;fill:#526174}.line{fill:none;stroke:#475569;stroke-width:2;marker-end:url(#arrow2)}.step{font-size:17px;font-weight:700;fill:#315f86;letter-spacing:.5px}
+    </style>
+  </defs>
+  <rect width="1100" height="940" fill="#fcfcfb" rx="18"/>
+  <text class="t h" x="550" y="48" text-anchor="middle">REPRODUCIBLE EVALUATION &amp; RELEASE FLOW</text>
+  <g class="t" text-anchor="middle">
+    <rect class="box amber" x="345" y="85" width="410" height="98"/><text class="label" x="550" y="116">ORIGINAL SYNTHETIC BENCHMARK</text><text class="small" x="550" y="142">ragbench-v1</text><text class="small" x="550" y="163">12 docs · 36 chunks · 24 questions</text>
+    <path class="line" d="M550 183 V228"/>
+    <rect class="box blue" x="405" y="230" width="290" height="64"/><text class="label" x="550" y="268">Experiment Runner</text>
+    <path d="M550 294 V330 M305 330 H795" fill="none" stroke="#475569" stroke-width="2"/>
+    <path class="line" d="M305 330 V370"/><path class="line" d="M795 330 V370"/>
+    <rect class="box" x="155" y="372" width="300" height="72"/><text class="label" x="305" y="403">Retrieval Artifacts</text><text class="small" x="305" y="427">rankings + metrics</text>
+    <rect class="box" x="645" y="372" width="300" height="72"/><text class="label" x="795" y="403">Generation Artifacts</text><text class="small" x="795" y="427">answers + evaluation</text>
+    <path d="M305 444 V480 M795 444 V480 M305 480 H795 M550 480 V520" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow2)"/>
+    <rect class="box green" x="390" y="522" width="320" height="70"/><text class="label" x="550" y="552">Versioned JSON / JSONL</text><text class="small" x="550" y="576">inspectable evidence</text>
+    <path d="M550 592 V625 M305 625 H795" fill="none" stroke="#475569" stroke-width="2"/>
+    <path class="line" d="M305 625 V660"/><path class="line" d="M795 625 V660"/>
+    <rect class="box blue" x="145" y="662" width="320" height="76"/><text class="label" x="305" y="693">Hugging Face Dataset</text><text class="small" x="305" y="718">benchmark evidence</text>
+    <rect class="box blue" x="635" y="662" width="320" height="76"/><text class="label" x="795" y="693">Static Hugging Face Space</text><text class="small" x="795" y="718">read-only dashboard</text>
+    <path d="M305 738 V770 M795 738 V770 M305 770 H795 M550 770 V803" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow2)"/>
+    <rect class="box" x="365" y="805" width="370" height="72"/><text class="label" x="550" y="836">GitHub README</text><text class="small" x="550" y="860">methodology + reproduction</text>
+  </g>
+  <text class="t step" x="550" y="916" text-anchor="middle">MEASURE → DIAGNOSE → COMPARE → REPRODUCE → PUBLISH</text>
+</svg>

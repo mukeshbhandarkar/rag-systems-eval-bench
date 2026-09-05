@@ -1,8 +1,8 @@
 # Architecture assets
 
-The portfolio README reserves positions for these reviewed Excalidraw exports:
+The root README uses two self-contained SVG diagrams:
 
-- `rag-systems-architecture.png`
-- `rag-evaluation-release-flow.png`
+- `rag-systems-architecture.svg` — retrieval, generation, evaluation, and failure decomposition
+- `rag-evaluation-release-flow.svg` — the path from the synthetic benchmark to public evidence
 
-The image files were not present during the final README pass. Add the supplied exports under this directory without changing their filenames; the insertion comments in the root README mark their intended positions.
+Both assets use only SVG primitives and system fonts. They contain no scripts, external resources, third-party artwork, or embedded brand assets.

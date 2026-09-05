@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1050" viewBox="0 0 1100 1050" role="img" aria-labelledby="title desc">
+  <title id="title">RAG Systems Evaluation Architecture</title>
+  <desc id="desc">The benchmark flows through documents, questions, and chunking into BM25, dense MiniLM, and hybrid RRF retrieval, then retrieval evaluation, FLAN-T5-small generation, answer evaluation, and failure decomposition.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+    <style>
+      .t{font-family:Arial,Helvetica,sans-serif;fill:#172033}.h{font-size:27px;font-weight:700;letter-spacing:1px}.sub{font-size:15px;fill:#526174}.box{fill:#fff;stroke:#475569;stroke-width:2;rx:12}.blue{fill:#edf6ff;stroke:#3779b8}.amber{fill:#fff8e7;stroke:#b7791f}.green{fill:#eef9f1;stroke:#438a5e}.label{font-size:18px;font-weight:700}.small{font-size:14px;fill:#526174}.line{fill:none;stroke:#475569;stroke-width:2;marker-end:url(#arrow)}.note{fill:#f8fafc;stroke:#94a3b8;stroke-width:1.5;stroke-dasharray:6 5;rx:10}.notehead{font-size:15px;font-weight:700}.notetext{font-size:13px;fill:#475569}
+    </style>
+  </defs>
+  <rect width="1100" height="1050" fill="#fcfcfb" rx="18"/>
+  <text class="t h" x="550" y="48" text-anchor="middle">RAG SYSTEMS EVALUATION BENCH</text>
+  <text class="t sub" x="550" y="74" text-anchor="middle">CPU-only · reproducible · diagnostic</text>
+
+  <g class="t" text-anchor="middle">
+    <rect class="box" x="430" y="105" width="240" height="58"/><text class="label" x="550" y="140">Benchmark</text>
+    <path class="line" d="M550 163 V198"/>
+    <rect class="box" x="410" y="200" width="280" height="64"/><text class="label" x="550" y="228">Documents + Questions</text><text class="small" x="550" y="250">ragbench-v1</text>
+    <path class="line" d="M550 264 V299"/>
+    <rect class="box" x="430" y="301" width="240" height="58"/><text class="label" x="550" y="336">Chunking</text>
+
+    <path d="M550 359 V395 M210 395 H890" fill="none" stroke="#475569" stroke-width="2"/>
+    <path class="line" d="M210 395 V430"/><path class="line" d="M550 395 V430"/><path class="line" d="M890 395 V430"/>
+    <rect class="box blue" x="90" y="432" width="240" height="82"/><text class="label" x="210" y="466">BM25</text><text class="small" x="210" y="491">lexical rank</text>
+    <rect class="box blue" x="430" y="432" width="240" height="82"/><text class="label" x="550" y="466">Dense MiniLM</text><text class="small" x="550" y="491">cosine similarity</text>
+    <rect class="box blue" x="770" y="432" width="240" height="82"/><text class="label" x="890" y="466">Hybrid RRF</text><text class="small" x="890" y="491">rank fusion</text>
+    <path d="M210 514 V548 M550 514 V548 M890 514 V548 M210 548 H890 M550 548 V582" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect class="box amber" x="390" y="584" width="320" height="78"/><text class="label" x="550" y="616">Retrieval Evaluation</text><text class="small" x="550" y="642">Recall@K · MRR · categories</text>
+    <path class="line" d="M550 662 V697"/>
+    <rect class="box" x="430" y="699" width="240" height="58"/><text class="label" x="550" y="734">Retrieved Context</text>
+    <path class="line" d="M550 757 V792"/>
+    <rect class="box blue" x="410" y="794" width="280" height="70"/><text class="label" x="550" y="824">FLAN-T5-small</text><text class="small" x="550" y="848">generation</text>
+    <path class="line" d="M550 864 V899"/>
+    <rect class="box amber" x="390" y="901" width="320" height="78"/><text class="label" x="550" y="933">Answer Evaluation</text><text class="small" x="550" y="959">EM · Token F1 · Semantic</text>
+    <path class="line" d="M550 979 V1004"/>
+    <rect class="box green" x="350" y="1006" width="400" height="38"/><text class="label" x="550" y="1032">Success / Retrieval / Generation</text>
+  </g>
+
+  <g class="t">
+    <rect class="note" x="755" y="602" width="305" height="174"/>
+    <text class="notehead" x="777" y="631">Operational definitions</text>
+    <text class="notehead" x="777" y="664">Retrieval failure</text><text class="notetext" x="777" y="685">Labeled evidence was not retrieved.</text>
+    <text class="notehead" x="777" y="720">Generation failure</text><text class="notetext" x="777" y="741">Evidence was retrieved, but the answer</text><text class="notetext" x="777" y="760">missed the reference under exact match.</text>
+  </g>
+</svg>

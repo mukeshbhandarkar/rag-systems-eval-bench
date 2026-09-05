@@ -1,16 +1,10 @@
-<div align="center">
-
 # RAG Systems Evaluation Bench
 
-### Measure where RAG systems succeed — and where they fail.
+CPU-only evaluation of BM25, dense MiniLM, and hybrid RRF retrieval.
 
-CPU-only evaluation of lexical, dense, and hybrid retrieval with transparent retrieval and generation failure analysis.
+**Mukesh Bhandarkar** · [🤗 Hugging Face](https://huggingface.co/Max00035) · [Live Space](https://huggingface.co/spaces/Max00035/rag-systems-eval-bench) · [Dataset](https://huggingface.co/datasets/Max00035/rag-systems-eval-benchmark) · [GitHub](https://github.com/mukeshbhandarkar/rag-systems-eval-bench)
 
-[**Live Demo · Hugging Face Space**](https://huggingface.co/spaces/Max00035/rag-systems-eval-bench) · [**Dataset · Hugging Face**](https://huggingface.co/datasets/Max00035/rag-systems-eval-benchmark) · [**Source · GitHub**](https://github.com/mukeshbhandarkar/rag-systems-eval-bench)
-
-![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white) ![CPU only](https://img.shields.io/badge/runtime-CPU--only-3949AB) ![$0 API cost](https://img.shields.io/badge/API%20cost-%240-087A55) ![MIT](https://img.shields.io/badge/code-MIT-17202A) ![CC BY 4.0](https://img.shields.io/badge/dataset-CC%20BY%204.0-B54708)
-
-</div>
+[![CPU only](https://img.shields.io/badge/runtime-CPU_only-555?style=flat-square)](#design-constraints) [![$0 API cost](https://img.shields.io/badge/API_cost-%240-555?style=flat-square)](#design-constraints) [![ragbench-v1](https://img.shields.io/badge/benchmark-ragbench--v1-555?style=flat-square)](#benchmark) [![MIT / CC BY 4.0](https://img.shields.io/badge/licenses-MIT_%2F_CC_BY_4.0-555?style=flat-square)](#licenses)
 
 ## Why This Project Exists
 
@@ -18,9 +12,11 @@ Aggregate RAG answer quality hides distinct engineering failures. Retrieval can 
 
 **A bad RAG answer is not one failure mode.** This project evaluates retrieval independently, persists the evidence shown to generation, then classifies answer outcomes with explicit local metrics rather than an opaque LLM judge.
 
-## Architecture
+## System Architecture
 
-<!-- Add docs/assets/rag-systems-architecture.png here -->
+<p align="center">
+  <img src="docs/assets/rag-systems-architecture.svg" alt="Architecture of the RAG Systems Evaluation Bench" width="900">
+</p>
 
 ```text
 Benchmark
@@ -95,13 +91,19 @@ The reference generation configuration uses BM25 retrieval and `google/flan-t5-s
 
 High retrieval success did **not** imply high answer correctness under the benchmark's explicit exact-match rule. This is the central reason retrieval and generation are evaluated separately.
 
-Here, `generation_failure` means labeled evidence was retrieved but the output did not match an accepted answer after documented normalization. It is a reproducible benchmark classification—not a universal claim that every non-exact-match response is semantically wrong. Token F1 and semantic similarity remain visible alongside the stricter rule, and semantic similarity is not treated as faithfulness.
+Here, `generation_failure` means evidence was retrieved, but the generated answer did not match the reference under the benchmark's exact-match rule after documented normalization. This is the benchmark's operational definition—not a universal claim that every non-exact-match response is semantically wrong. Token F1 and semantic similarity remain visible alongside the stricter rule, and semantic similarity is not treated as faithfulness.
 
 ## Static Hugging Face Dashboard
 
 The [live Space](https://huggingface.co/spaces/Max00035/rag-systems-eval-bench) is a static engineering dashboard built with HTML, CSS, and vanilla JavaScript. It has no backend, model runtime, API key, or analytics. The browser consumes versioned `results.json` and `failures.json`; it does not recompute benchmark results.
 
-<!-- Add docs/assets/rag-evaluation-release-flow.png here -->
+## From Benchmark to Public Evidence
+
+<p align="center">
+  <img src="docs/assets/rag-evaluation-release-flow.svg" alt="Reproducible evaluation and release flow from benchmark to public evidence" width="900">
+</p>
+
+The experiment runner writes retrieval and generation artifacts as versioned JSON and JSONL. Those same inspectable files support the published Dataset, the read-only Space, and the methodology and reproduction notes in this repository.
 
 ## Reproduce Locally
 
