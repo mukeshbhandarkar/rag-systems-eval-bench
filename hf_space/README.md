@@ -1,12 +1,13 @@
 ---
 title: RAG Systems Evaluation Bench
-emoji: 🔎
-colorFrom: slate
-colorTo: blue
+emoji: 📊
+colorFrom: blue
+colorTo: indigo
 sdk: static
 app_file: index.html
 pinned: false
 license: mit
+short_description: Compare BM25, dense, and hybrid retrieval with transparent RAG failure analysis.
 ---
 
 # RAG Systems Evaluation Bench
