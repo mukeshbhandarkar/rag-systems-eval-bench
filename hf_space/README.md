@@ -7,7 +7,7 @@ sdk: static
 app_file: index.html
 pinned: false
 license: mit
-short_description: BM25, dense, and hybrid RAG evaluation with failure analysis.
+short_description: RAG retrieval evaluation with transparent failure analysis
 ---
 
 # RAG Systems Evaluation Bench
