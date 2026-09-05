@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CPU-only lexical, dense, and hybrid RAG retrieval evaluation.">
+  <title>RAG Systems Evaluation Bench</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <nav aria-label="Primary navigation">
+      <a class="brand" href="#top">RAGBENCH / V1</a>
+      <div><a href="#comparison">Results</a><a href="#methodology">Methodology</a></div>
+    </nav>
+    <div class="hero-copy" id="top">
+      <p class="eyebrow">Retrieval systems · measured, not marketed</p>
+      <h1>RAG Systems<br><span>Evaluation Bench</span></h1>
+      <p class="lede">A CPU-only evaluation of lexical, dense, and hybrid retrieval with transparent RAG failure analysis.</p>
+      <div class="chips" aria-label="Project attributes">
+        <span>CPU-only</span><span>$0 API cost</span><span>Reproducible</span>
+        <span>BM25</span><span>MiniLM</span><span>RRF</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="overview-title">
+      <div class="section-heading"><p>01 / Dataset</p><h2 id="overview-title">Benchmark overview</h2></div>
+      <div class="stat-grid" id="overview" aria-live="polite"></div>
+      <p class="disclosure">Original synthetic technical content. Small and diagnostic—not an industry benchmark or a claim of statistical significance.</p>
+    </section>
+
+    <section id="comparison" aria-labelledby="comparison-title">
+      <div class="section-heading"><p>02 / Retrieval</p><h2 id="comparison-title">Same evidence. Three strategies.</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Retriever</th><th>Recall@1</th><th>Recall@3</th><th>Recall@5</th><th>MRR@5</th><th>Runtime</th><th>Peak RSS</th></tr></thead>
+        <tbody id="retrieval-table"></tbody>
+      </table></div>
+      <p class="table-note">Highlights mark the highest observed value per quality column. Runtime and memory were observed once on the CPU-only development machine.</p>
+    </section>
+
+    <section aria-labelledby="category-title">
+      <div class="section-heading"><p>03 / Diagnostics</p><h2 id="category-title">Category breakdown</h2></div>
+      <div id="category-filters" class="filters" role="group" aria-label="Select benchmark category"></div>
+      <div id="category-chart" class="category-chart"></div>
+      <p class="table-note">Each slice contains only a few examples. Use it to inspect behavior, not infer statistical significance.</p>
+    </section>
+
+    <section class="rrf-panel" aria-labelledby="rrf-title">
+      <div><p class="eyebrow">Hybrid retrieval</p><h2 id="rrf-title">Rankings speak a common language.</h2><p>BM25 and cosine scores live on incompatible scales. Reciprocal Rank Fusion combines positions instead—without training or score calibration.</p></div>
+      <div class="fusion" aria-label="BM25 and dense rankings merge through reciprocal rank fusion">
+        <span>BM25 ranking</span><b>＋</b><span>Dense ranking</span><strong>RRF</strong>
+        <code>RRF(d) = Σ 1 / (60 + rankᵣ(d))</code>
+      </div>
+    </section>
+
+    <section aria-labelledby="failure-title">
+      <div class="section-heading"><p>04 / Inspection</p><h2 id="failure-title">Failure explorer</h2></div>
+      <div class="explorer-controls"><label for="failure-select">Question with an incomplete top-5 retrieval</label><select id="failure-select"></select></div>
+      <article id="failure-detail" class="failure-detail" aria-live="polite"></article>
+    </section>
+
+    <section aria-labelledby="generation-title">
+      <div class="section-heading"><p>05 / Generation</p><h2 id="generation-title">Retrieval success is not answer success.</h2></div>
+      <div id="generation-cards" class="stat-grid"></div>
+      <div class="decomposition"><div><strong>Retrieval failure</strong><p>The labeled evidence never reached the model.</p></div><div><strong>Generation failure</strong><p>Evidence arrived, but the exact answer did not.</p></div></div>
+      <p class="disclosure">Reference run: BM25 + FLAN-T5-small. Semantic similarity measures meaning overlap, not faithfulness.</p>
+    </section>
+
+    <section id="methodology" aria-labelledby="pipeline-title">
+      <div class="section-heading"><p>06 / System</p><h2 id="pipeline-title">Inspectable from source to failure.</h2></div>
+      <div class="pipeline" aria-label="RAG evaluation pipeline">
+        <span>Documents</span><i>→</i><span>Chunks</span><i>→</i><span>BM25 / MiniLM / RRF</span><i>→</i><span>Retrieval metrics</span><i>→</i><span>Context</span><i>→</i><span>FLAN-T5</span><i>→</i><span>Answer metrics</span><i>→</i><span>Failure type</span>
+      </div>
+    </section>
+
+    <section class="method-grid" aria-labelledby="limits-title">
+      <div><p class="eyebrow">Methodology</p><h2 id="limits-title">Deliberately modest.</h2><p>Twenty-four curated questions test identifiers, acronyms, paraphrases, distractors, semantic wording, and controls. All systems receive identical chunks and labels.</p></div>
+      <ul>
+        <li>Small synthetic diagnostic benchmark</li><li>No LLM judge or automatic faithfulness model</li><li>No claim of production-scale performance</li><li>Category groups are not statistically powered</li><li>Public benchmark is distinct from the two-question integration fixture</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer><p>Built as an inspectable engineering benchmark.</p><div><a href="https://github.com/mukeshbhandarkar/rag-systems-eval-bench">GitHub</a><a href="https://huggingface.co/datasets/Max00035/rag-systems-eval-benchmark">Dataset</a><a href="https://huggingface.co/spaces/Max00035/rag-systems-eval-bench">Space</a><a href="https://huggingface.co/Max00035">HF profile</a></div></footer>
+</body>
+</html>

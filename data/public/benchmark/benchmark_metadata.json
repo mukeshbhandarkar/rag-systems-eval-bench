@@ -1,0 +1,8 @@
+{
+  "benchmark_name": "RAG Systems Evaluation Bench",
+  "benchmark_version": "ragbench-v1",
+  "corpus_version": "ragbench-v1",
+  "content_origin": "Original synthetic technical passages authored for this benchmark",
+  "question_count": 24,
+  "categories": ["acronym", "control", "distractor", "lexical", "paraphrase", "semantic", "unanswerable"]
+}

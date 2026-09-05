@@ -1,0 +1,313 @@
+{
+  "benchmark": {
+    "answerable_count": 22,
+    "benchmark_version": "ragbench-v1",
+    "categories": {
+      "acronym": 3,
+      "control": 4,
+      "distractor": 3,
+      "lexical": 4,
+      "paraphrase": 4,
+      "semantic": 4,
+      "unanswerable": 2
+    },
+    "chunk_count": 36,
+    "content_origin": "Original synthetic technical passages",
+    "corpus_version": "ragbench-v1",
+    "document_count": 12,
+    "name": "RAG Systems Evaluation Bench",
+    "question_count": 24,
+    "unanswerable_count": 2
+  },
+  "generation": {
+    "config": {
+      "decoding": "greedy",
+      "device": "cpu",
+      "do_sample": false,
+      "max_input_tokens": 512,
+      "max_new_tokens": 32,
+      "model_name": "google/flan-t5-small",
+      "prompt_template": "context_only_v1"
+    },
+    "elapsed_seconds": 25.57,
+    "metrics": {
+      "abstention_accuracy": 0.0,
+      "answer_without_labeled_retrieval_count": 0,
+      "answerable_evaluated_count": 22,
+      "exact_match": 0.22727272727272727,
+      "generation_failure_count": 16,
+      "generation_failure_rate_given_retrieval_hit": 0.7619047619047619,
+      "query_count": 24,
+      "retrieval_failure_count": 1,
+      "retrieval_success_rate": 0.9545454545454546,
+      "semantic_similarity_mean": 0.6070945599878376,
+      "success_count": 5,
+      "token_f1": 0.5464777646595829,
+      "unanswerable_count": 2
+    },
+    "model": "google/flan-t5-small",
+    "peak_rss_mb": 737.2,
+    "retriever": "bm25",
+    "scope": "ragbench-v1 public benchmark",
+    "semantic_evaluation": {
+      "elapsed_seconds": 14.5,
+      "peak_rss_mb": 489.5
+    }
+  },
+  "methodology": {
+    "cutoffs": [
+      1,
+      3,
+      5
+    ],
+    "environment": {
+      "execution": "CPU-only",
+      "python": "3.12.11"
+    },
+    "hybrid_candidate_k": 20,
+    "hybrid_rrf_k": 60,
+    "resource_note": "Observed once on the CPU-only development machine; includes process and model loading."
+  },
+  "retrievers": [
+    {
+      "categories": {
+        "acronym": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 3,
+          "recall_at_1": 0.6666666666666666,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "control": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 4,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "distractor": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 3,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "lexical": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.75,
+          "mrr_at_5": 0.8,
+          "question_count": 4,
+          "recall_at_1": 0.625,
+          "recall_at_3": 0.75,
+          "recall_at_5": 1.0
+        },
+        "paraphrase": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.75,
+          "mrr_at_5": 0.75,
+          "question_count": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 0.75,
+          "recall_at_5": 0.75
+        },
+        "semantic": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.75,
+          "mrr_at_5": 0.8,
+          "question_count": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 0.75,
+          "recall_at_5": 1.0
+        },
+        "unanswerable": {
+          "mrr_at_1": null,
+          "mrr_at_3": null,
+          "mrr_at_5": null,
+          "question_count": 0,
+          "recall_at_1": null,
+          "recall_at_3": null,
+          "recall_at_5": null
+        }
+      },
+      "elapsed_seconds": 0.43,
+      "id": "bm25",
+      "label": "BM25",
+      "metrics": {
+        "mrr_at_1": 0.8636363636363636,
+        "mrr_at_3": 0.8636363636363636,
+        "mrr_at_5": 0.8818181818181817,
+        "recall_at_1": 0.7954545454545454,
+        "recall_at_3": 0.8636363636363636,
+        "recall_at_5": 0.9545454545454546
+      },
+      "model": null,
+      "peak_rss_mb": 31.3
+    },
+    {
+      "categories": {
+        "acronym": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 3,
+          "recall_at_1": 0.6666666666666666,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "control": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.875,
+          "mrr_at_5": 0.875,
+          "question_count": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "distractor": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 3,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "lexical": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 4,
+          "recall_at_1": 0.875,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "paraphrase": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 4,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "semantic": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.875,
+          "mrr_at_5": 0.875,
+          "question_count": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "unanswerable": {
+          "mrr_at_1": null,
+          "mrr_at_3": null,
+          "mrr_at_5": null,
+          "question_count": 0,
+          "recall_at_1": null,
+          "recall_at_3": null,
+          "recall_at_5": null
+        }
+      },
+      "elapsed_seconds": 15.3,
+      "id": "dense",
+      "label": "Dense MiniLM",
+      "metrics": {
+        "mrr_at_1": 0.9090909090909091,
+        "mrr_at_3": 0.9545454545454546,
+        "mrr_at_5": 0.9545454545454546,
+        "recall_at_1": 0.8409090909090909,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0
+      },
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "peak_rss_mb": 543.3
+    },
+    {
+      "categories": {
+        "acronym": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 3,
+          "recall_at_1": 0.6666666666666666,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "control": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.875,
+          "mrr_at_5": 0.875,
+          "question_count": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "distractor": {
+          "mrr_at_1": 1.0,
+          "mrr_at_3": 1.0,
+          "mrr_at_5": 1.0,
+          "question_count": 3,
+          "recall_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "lexical": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.875,
+          "mrr_at_5": 0.875,
+          "question_count": 4,
+          "recall_at_1": 0.625,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "paraphrase": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.75,
+          "mrr_at_5": 0.8125,
+          "question_count": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 0.75,
+          "recall_at_5": 1.0
+        },
+        "semantic": {
+          "mrr_at_1": 0.75,
+          "mrr_at_3": 0.875,
+          "mrr_at_5": 0.875,
+          "question_count": 4,
+          "recall_at_1": 0.75,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0
+        },
+        "unanswerable": {
+          "mrr_at_1": null,
+          "mrr_at_3": null,
+          "mrr_at_5": null,
+          "question_count": 0,
+          "recall_at_1": null,
+          "recall_at_3": null,
+          "recall_at_5": null
+        }
+      },
+      "elapsed_seconds": 15.15,
+      "id": "hybrid",
+      "label": "Hybrid RRF",
+      "metrics": {
+        "mrr_at_1": 0.8181818181818182,
+        "mrr_at_3": 0.8863636363636364,
+        "mrr_at_5": 0.8977272727272727,
+        "recall_at_1": 0.75,
+        "recall_at_3": 0.9545454545454546,
+        "recall_at_5": 1.0
+      },
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "peak_rss_mb": 537.5
+    }
+  ]
+}

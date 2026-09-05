@@ -1,0 +1,1 @@
+Python is a programming language known for readable syntax. Pytest is a testing framework for Python projects.

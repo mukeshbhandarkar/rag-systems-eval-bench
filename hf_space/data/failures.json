@@ -1,0 +1,75 @@
+[
+  {
+    "category": "paraphrase",
+    "question": "Why does the hybrid method merge rank positions instead of averaging lexical and cosine values?",
+    "question_id": "ragbench-q006",
+    "reference_answers": [
+      "BM25 and cosine scores have unrelated numeric scales"
+    ],
+    "relevant_chunk_ids": [
+      "hybrid-rrf-4479d7429d::chunk-0001"
+    ],
+    "retrievers": {
+      "bm25": {
+        "recall_at_5": 0.0,
+        "results": [
+          {
+            "chunk_id": "hybrid-rrf-4479d7429d::chunk-0000",
+            "excerpt": "# Hybrid rank fusion Hybrid retrieval combines evidence from lexical and semantic rankers. Reciprocal Rank Fusion, abbreviated RRF, assigns each candidate a contribution of one div",
+            "rank": 1
+          },
+          {
+            "chunk_id": "bm25-93f1e9d3f2::chunk-0000",
+            "excerpt": "# BM25 lexical ranking BM25 is a bag-of-words ranking function. It increases a document score when query terms occur in that document, while inverse document frequency gives uncomm",
+            "rank": 2
+          },
+          {
+            "chunk_id": "retrieval-basics-021fa30859::chunk-0001",
+            "excerpt": "top. Reciprocal rank instead rewards placing the first relevant chunk early. Lexical retrieval matches query terms against document terms. It is often effective for exact product c",
+            "rank": 3
+          }
+        ]
+      },
+      "dense": {
+        "recall_at_5": 1.0,
+        "results": [
+          {
+            "chunk_id": "hybrid-rrf-4479d7429d::chunk-0001",
+            "excerpt": "to 60. RRF combines ordering rather than raw scores. That matters because a BM25 score and a cosine similarity have unrelated numeric scales. Rank fusion needs no learned calibrati",
+            "rank": 1
+          },
+          {
+            "chunk_id": "hybrid-rrf-4479d7429d::chunk-0000",
+            "excerpt": "# Hybrid rank fusion Hybrid retrieval combines evidence from lexical and semantic rankers. Reciprocal Rank Fusion, abbreviated RRF, assigns each candidate a contribution of one div",
+            "rank": 2
+          },
+          {
+            "chunk_id": "retrieval-basics-021fa30859::chunk-0001",
+            "excerpt": "top. Reciprocal rank instead rewards placing the first relevant chunk early. Lexical retrieval matches query terms against document terms. It is often effective for exact product c",
+            "rank": 3
+          }
+        ]
+      },
+      "hybrid": {
+        "recall_at_5": 1.0,
+        "results": [
+          {
+            "chunk_id": "hybrid-rrf-4479d7429d::chunk-0000",
+            "excerpt": "# Hybrid rank fusion Hybrid retrieval combines evidence from lexical and semantic rankers. Reciprocal Rank Fusion, abbreviated RRF, assigns each candidate a contribution of one div",
+            "rank": 1
+          },
+          {
+            "chunk_id": "retrieval-basics-021fa30859::chunk-0001",
+            "excerpt": "top. Reciprocal rank instead rewards placing the first relevant chunk early. Lexical retrieval matches query terms against document terms. It is often effective for exact product c",
+            "rank": 2
+          },
+          {
+            "chunk_id": "bm25-93f1e9d3f2::chunk-0000",
+            "excerpt": "# BM25 lexical ranking BM25 is a bag-of-words ranking function. It increases a document score when query terms occur in that document, while inverse document frequency gives uncomm",
+            "rank": 3
+          }
+        ]
+      }
+    }
+  }
+]

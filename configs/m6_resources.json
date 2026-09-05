@@ -1,0 +1,8 @@
+{
+  "bm25": {"elapsed_seconds": 0.43, "peak_rss_kb": 32072},
+  "dense": {"elapsed_seconds": 15.30, "peak_rss_kb": 556332},
+  "hybrid": {"elapsed_seconds": 15.15, "peak_rss_kb": 550372},
+  "generation": {"elapsed_seconds": 25.57, "peak_rss_kb": 754932},
+  "answer_semantic_evaluation": {"elapsed_seconds": 14.50, "peak_rss_kb": 501268},
+  "measurement_note": "Observed once on the CPU-only development machine; includes process and model loading."
+}

@@ -1,0 +1,2 @@
+{"question_id":"fixture-q1","question":"Which language is known for readable syntax?","gold_chunk_ids":["python-1d4a936353::chunk-0000"],"reference_answers":["Python"],"answerable":true,"metadata":{"fixture":true}}
+{"question_id":"fixture-q2","question":"What lexical retrieval method is described?","gold_chunk_ids":["retrieval-a22c50df33::chunk-0000"],"reference_answers":["BM25"],"answerable":true,"metadata":{"fixture":true}}

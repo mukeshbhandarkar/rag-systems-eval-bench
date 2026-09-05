@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+dist/
+build/
+
+# Run artifacts and generated corpora are reproducible from versioned inputs.
+runs/*
+!runs/.gitkeep
+data/processed/*
+!data/processed/.gitkeep

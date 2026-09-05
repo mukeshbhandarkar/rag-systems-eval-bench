@@ -1,0 +1,8 @@
+{
+  "chunk_count": 36,
+  "chunk_size_words": 45,
+  "corpus_version": "ragbench-v1",
+  "document_count": 12,
+  "generated_at": "2026-09-04T23:40:49.228919+00:00",
+  "overlap_words": 5
+}
