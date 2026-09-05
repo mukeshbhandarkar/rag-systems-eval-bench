@@ -7,7 +7,7 @@ sdk: static
 app_file: index.html
 pinned: false
 license: mit
-short_description: Compare BM25, dense, and hybrid retrieval with transparent RAG failure analysis.
+short_description: BM25, dense, and hybrid RAG evaluation with failure analysis.
 ---
 
 # RAG Systems Evaluation Bench
