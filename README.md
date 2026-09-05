@@ -1,10 +1,16 @@
-# RAG Systems Evaluation Bench
+<h1 align="center">RAG Systems Evaluation Bench</h1>
 
-CPU-only evaluation of BM25, dense MiniLM, and hybrid RRF retrieval.
+<p align="center"><strong>Measuring where RAG retrieval and generation succeed — and fail.</strong></p>
 
-**Mukesh Bhandarkar** · [🤗 Hugging Face](https://huggingface.co/Max00035) · [Live Space](https://huggingface.co/spaces/Max00035/rag-systems-eval-bench) · [Dataset](https://huggingface.co/datasets/Max00035/rag-systems-eval-benchmark) · [GitHub](https://github.com/mukeshbhandarkar/rag-systems-eval-bench)
+<p align="center">CPU-only evaluation of <strong>BM25 · Dense MiniLM · Hybrid RRF</strong></p>
 
-[![CPU only](https://img.shields.io/badge/runtime-CPU_only-555?style=flat-square)](#design-constraints) [![$0 API cost](https://img.shields.io/badge/API_cost-%240-555?style=flat-square)](#design-constraints) [![ragbench-v1](https://img.shields.io/badge/benchmark-ragbench--v1-555?style=flat-square)](#benchmark) [![MIT / CC BY 4.0](https://img.shields.io/badge/licenses-MIT_%2F_CC_BY_4.0-555?style=flat-square)](#licenses)
+<p align="center"><strong><a href="https://github.com/mukeshbhandarkar">Mukesh Bhandarkar</a></strong></p>
+
+<p align="center"><a href="https://huggingface.co/Max00035">🤗 Hugging Face</a> · <a href="https://huggingface.co/spaces/Max00035/rag-systems-eval-bench">Live Space</a> · <a href="https://huggingface.co/datasets/Max00035/rag-systems-eval-benchmark">Dataset</a> · <a href="https://github.com/mukeshbhandarkar/rag-systems-eval-bench">GitHub</a></p>
+
+<p align="center"><code>CPU-only</code> · <code>$0 API cost</code> · <code>ragbench-v1</code></p>
+
+---
 
 ## Why This Project Exists
 
